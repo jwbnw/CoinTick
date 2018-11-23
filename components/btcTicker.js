@@ -1,10 +1,5 @@
 import React, { Component } from "react";
-import {
-  StyleSheet,
-  View,
-  TouchableOpacity,
-  Text
-} from "react-native";
+import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
 
 export default class BtcTicker extends React.Component {
   constructor(props) {
@@ -35,7 +30,6 @@ export default class BtcTicker extends React.Component {
   }
 
   render() {
-   
     if (this.state.isLoading) {
       return (
         <TouchableOpacity onPress={this._onPressBtn} style={styles.button1}>
