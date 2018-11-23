@@ -10,11 +10,18 @@ export default class BtcTicker extends React.Component {
 
     //Not sure if there is a better way to do this.
     this._onPressBtn = this._onPressBtn.bind(this);
+    this._onPressBtn1 = this._onPressBtn1.bind(this);
     this.fetchData = this.fetchData.bind(this);
   }
 
   _onPressBtn() {
     this.fetchData();
+  }
+
+  _onPressBtn1() {
+    this.setState({
+      isLoading: true
+    });
   }
 
   fetchData() {
@@ -39,8 +46,11 @@ export default class BtcTicker extends React.Component {
         </TouchableOpacity>
       );
     } else {
-      //if I make this a touchable opacity then onClick I can set isLoading = false and hide the ticker
-      return <Text style={styles.result}>{this.state.dataSource}</Text>;
+      return (
+        <TouchableOpacity onPress={this._onPressBtn1} style={styles.button1}>
+          <Text style={styles.result}>{this.state.dataSource}</Text>
+        </TouchableOpacity>
+      );
     }
   }
 }

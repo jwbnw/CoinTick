@@ -14,11 +14,18 @@ export default class EthTicker extends React.Component {
     this.state = { isLoading: true };
 
     this._onPressBtn = this._onPressBtn.bind(this);
+    this._onPressBtn1 = this._onPressBtn1.bind(this);
     this.fetchData = this.fetchData.bind(this);
   }
 
   _onPressBtn() {
     this.fetchData();
+  }
+
+  _onPressBtn1() {
+    this.setState({
+      isLoading: true
+    });
   }
 
   fetchData() {
@@ -43,7 +50,11 @@ export default class EthTicker extends React.Component {
         </TouchableOpacity>
       );
     } else {
-      return <Text style={styles.result}>{this.state.dataSource}</Text>;
+      return (
+        <TouchableOpacity onPress={this._onPressBtn1} style={styles.button1}>
+          <Text style={styles.result}>{this.state.dataSource}</Text>
+        </TouchableOpacity>
+      );
     }
   }
 }
