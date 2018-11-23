@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
 
+import FadeInView from "./fadeIn.js";
+
 export default class BtcTicker extends React.Component {
   constructor(props) {
     super(props);
@@ -45,9 +47,11 @@ export default class BtcTicker extends React.Component {
       );
     } else {
       return (
-        <TouchableOpacity onPress={this._onPressBtn1} style={styles.button1}>
-          <Text style={styles.result}>{this.state.dataSource}</Text>
-        </TouchableOpacity>
+        <FadeInView>
+          <TouchableOpacity onPress={this._onPressBtn1} style={styles.button1}>
+            <Text style={styles.result}>{this.state.dataSource}</Text>
+          </TouchableOpacity>
+        </FadeInView>
       );
     }
   }

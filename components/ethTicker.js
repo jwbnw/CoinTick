@@ -8,6 +8,8 @@ import {
   Text
 } from "react-native";
 
+import FadeInView from "./fadeIn.js";
+
 export default class EthTicker extends React.Component {
   constructor(props) {
     super(props);
@@ -51,9 +53,11 @@ export default class EthTicker extends React.Component {
       );
     } else {
       return (
-        <TouchableOpacity onPress={this._onPressBtn1} style={styles.button1}>
-          <Text style={styles.result}>{this.state.dataSource}</Text>
-        </TouchableOpacity>
+        <FadeInView>
+          <TouchableOpacity onPress={this._onPressBtn1} style={styles.button1}>
+            <Text style={styles.result}>{this.state.dataSource}</Text>
+          </TouchableOpacity>
+        </FadeInView>
       );
     }
   }

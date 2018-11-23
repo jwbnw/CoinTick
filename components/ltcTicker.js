@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
 
-//import fader from './components/fader.js';
+import FadeInView from "./fadeIn.js";
+//import FadeOutView from "./fadeOut.js";
 
 export default class BtcTicker extends React.Component {
   constructor(props) {
@@ -41,15 +42,19 @@ export default class BtcTicker extends React.Component {
   render() {
     if (this.state.isLoading) {
       return (
+        // <FadeOutView>
         <TouchableOpacity onPress={this._onPressBtn} style={styles.button1}>
           <Text>LTC</Text>
         </TouchableOpacity>
+        //  </FadeOutView>
       );
     } else {
       return (
-        <TouchableOpacity onPress={this._onPressBtn1} style={styles.button1}>
-          <Text style={styles.result}>{this.state.dataSource}</Text>
-        </TouchableOpacity>
+        <FadeInView>
+          <TouchableOpacity onPress={this._onPressBtn1} style={styles.button1}>
+            <Text style={styles.result}>{this.state.dataSource}</Text>
+          </TouchableOpacity>
+        </FadeInView>
       );
     }
   }
