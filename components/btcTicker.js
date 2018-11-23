@@ -9,7 +9,7 @@ import {
 export default class BtcTicker extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { isLoading: true, dataSource: "someVal" };
+    this.state = { isLoading: true, dataSource: "" };
 
     //Not sure if there is a better way to do this.
     this._onPressBtn = this._onPressBtn.bind(this);
@@ -21,14 +21,13 @@ export default class BtcTicker extends React.Component {
   }
 
   fetchData() {
-    fetch("https://api.coindesk.com/v1/bpi/currentprice/USD.json")
+    fetch("https://api.coinmarketcap.com/v1/ticker/bitcoin/")
       .then(response => response.json())
       .then(responseJSON => {
         this.setState({
-          dataSource: responseJSON.bpi.USD.rate,
+          dataSource: responseJSON[0].price_usd,
           isLoading: false
         });
-        console.log(this.state.dataSource);
       })
       .catch(error => {
         console.error(error);
@@ -44,6 +43,7 @@ export default class BtcTicker extends React.Component {
         </TouchableOpacity>
       );
     } else {
+      //if I make this a touchable opacity then onClick I can set isLoading = false and hide the ticker
       return <Text style={styles.result}>{this.state.dataSource}</Text>;
     }
   }
