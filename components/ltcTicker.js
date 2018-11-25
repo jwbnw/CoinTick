@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
 
 import FadeInView from "./fadeIn.js";
-//import FadeOutView from "./fadeOut.js";
 
 export default class BtcTicker extends React.Component {
   constructor(props) {
@@ -44,7 +43,7 @@ export default class BtcTicker extends React.Component {
       return (
         // <FadeOutView>
         <TouchableOpacity onPress={this._onPressBtn} style={styles.button1}>
-          <Text>LTC</Text>
+          <Text style={styles.result}>LTC</Text>
         </TouchableOpacity>
         //  </FadeOutView>
       );
@@ -52,7 +51,7 @@ export default class BtcTicker extends React.Component {
       return (
         <FadeInView>
           <TouchableOpacity onPress={this._onPressBtn1} style={styles.button1}>
-            <Text style={styles.result}>{this.state.dataSource}</Text>
+            <Text style={styles.result}>{"$" + this.state.dataSource}</Text>
           </TouchableOpacity>
         </FadeInView>
       );
@@ -64,11 +63,14 @@ const styles = StyleSheet.create({
   button1: {
     height: 50,
     alignSelf: "center",
-    color: "blue"
+    color: "blue",
+    fontSize: 34,
+    padding: 5
   },
   result: {
     alignSelf: "center",
-    height: 50
+    height: 50,
+    fontSize: 34
   },
   buttonText: {
     padding: 20,
