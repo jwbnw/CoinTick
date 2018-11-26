@@ -28,8 +28,9 @@ export default class BtcTicker extends React.Component {
     fetch("https://api.coinmarketcap.com/v1/ticker/bitcoin/")
       .then(response => response.json())
       .then(responseJSON => {
+        var price = parseFloat(responseJSON[0].price_usd).toFixed(2);
         this.setState({
-          dataSource: responseJSON[0].price_usd,
+          dataSource: price,
           isLoading: false
         });
       })
@@ -63,7 +64,7 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     color: "blue",
     fontSize: 34,
-    padding: 5
+    padding: 10
   },
   result: {
     alignSelf: "center",
