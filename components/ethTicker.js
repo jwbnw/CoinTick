@@ -5,7 +5,8 @@ import {
   StyleSheet,
   View,
   TouchableOpacity,
-  Text
+  Text,
+  Image
 } from "react-native";
 
 import FadeInView from "./fadeIn.js";
@@ -49,14 +50,17 @@ export default class EthTicker extends React.Component {
     if (this.state.isLoading) {
       return (
         <TouchableOpacity onPress={this._onPressBtn} style={styles.button1}>
-          <Text style={styles.result}>ETH</Text>
+          <Image
+            source={require("../assets/eth.png")}
+            style={styles.resurelt}
+          />
         </TouchableOpacity>
       );
     } else {
       return (
         <FadeInView>
           <TouchableOpacity onPress={this._onPressBtn1} style={styles.button1}>
-            <Text style={styles.result}>{"$" + this.state.dataSource}</Text>
+            <Text style={styles.resultTxt}>{"$" + this.state.dataSource}</Text>
           </TouchableOpacity>
         </FadeInView>
       );
@@ -66,7 +70,7 @@ export default class EthTicker extends React.Component {
 
 const styles = StyleSheet.create({
   button1: {
-    height: 50,
+    height: 200,
     alignSelf: "center",
     color: "blue",
     fontSize: 34,
@@ -74,8 +78,13 @@ const styles = StyleSheet.create({
   },
   result: {
     alignSelf: "center",
-    fontSize: 34,
-    height: 50
+    height: 200,
+    width: 200
+  },
+  resultTxt: {
+    height: 200,
+    fontSize: 28,
+    textAlign: "center"
   },
   buttonText: {
     padding: 20,

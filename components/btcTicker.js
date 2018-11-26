@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
+import { StyleSheet, View, TouchableOpacity, Text, Image } from "react-native";
 
 import FadeInView from "./fadeIn.js";
 
@@ -43,14 +43,14 @@ export default class BtcTicker extends React.Component {
     if (this.state.isLoading) {
       return (
         <TouchableOpacity onPress={this._onPressBtn} style={styles.button1}>
-          <Text style={styles.result}>BTC</Text>
+          <Image source={require("../assets/btc.png")} style={styles.result} />
         </TouchableOpacity>
       );
     } else {
       return (
         <FadeInView>
           <TouchableOpacity onPress={this._onPressBtn1} style={styles.button1}>
-            <Text style={styles.result}>{"$" + this.state.dataSource}</Text>
+            <Text style={styles.resultTxt}>{"$" + this.state.dataSource}</Text>
           </TouchableOpacity>
         </FadeInView>
       );
@@ -60,7 +60,7 @@ export default class BtcTicker extends React.Component {
 
 const styles = StyleSheet.create({
   button1: {
-    height: 50,
+    height: 200,
     alignSelf: "center",
     color: "blue",
     fontSize: 34,
@@ -68,8 +68,13 @@ const styles = StyleSheet.create({
   },
   result: {
     alignSelf: "center",
-    height: 50,
-    fontSize: 34
+    height: 200,
+    width: 200
+  },
+  resultTxt: {
+    height: 200,
+    fontSize: 28,
+    textAlign: "center"
   },
   buttonText: {
     padding: 20,
