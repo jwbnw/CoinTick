@@ -10,7 +10,7 @@ export default class FadeInView extends React.Component {
   componentDidMount() {
     Animated.timing(this.state.fadeAim, {
       toValue: 1,
-      duration: 7000
+      duration: 5000
     }).start();
   }
 
