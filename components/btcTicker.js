@@ -43,7 +43,10 @@ export default class BtcTicker extends React.Component {
     if (this.state.isLoading) {
       return (
         <TouchableOpacity onPress={this._onPressBtn} style={styles.button1}>
-          <Image source={require("../assets/btc.png")} style={styles.imageStyle} />
+          <Image
+            source={require("../assets/btc.png")}
+            style={styles.imageStyle}
+          />
         </TouchableOpacity>
       );
     } else {
@@ -61,16 +64,16 @@ export default class BtcTicker extends React.Component {
 const styles = StyleSheet.create({
   button1: {
     alignSelf: "center",
-    color: "blue",
-    fontSize: 34,
     padding: 10
   },
   imageStyle: {
-    alignSelf: "center",
+    alignSelf: "center"
   },
   resultTxt: {
-    fontSize: 28,
-    textAlign: "center"
+    height: 82, //match image size
+    fontSize: 26,
+    textAlign: "center",
+    paddingTop: 20,
   },
   buttonText: {
     padding: 20,
