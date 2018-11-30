@@ -59,7 +59,7 @@ export default class EthTicker extends React.Component {
     } else {
       return (
         <FadeInView>
-          <TouchableOpacity onPress={this._onPressBtn1} style={styles.button1}>
+          <TouchableOpacity onPress={this._onPressBtn1} style={styles.imageStyle}>
             <Text style={styles.resultTxt}>{"$" + this.state.dataSource}</Text>
           </TouchableOpacity>
         </FadeInView>
@@ -70,19 +70,15 @@ export default class EthTicker extends React.Component {
 
 const styles = StyleSheet.create({
   button1: {
-    height: 200,
     alignSelf: "center",
     color: "blue",
     fontSize: 34,
     padding: 10
   },
-  result: {
+  imageStyle: {
     alignSelf: "center",
-    height: 200,
-    width: 200
   },
   resultTxt: {
-    height: 200,
     fontSize: 28,
     textAlign: "center"
   },
