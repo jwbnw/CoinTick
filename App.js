@@ -4,6 +4,7 @@ import {
   AppRegistry,
   StyleSheet,
   View,
+  Linking,
   TouchableOpacity,
   Text
 } from "react-native";
@@ -28,7 +29,15 @@ export default class App extends Component {
           <EthTicker />
         </View>
         <View style={styles.bottom}>
-          <Text>price providied by coinbasemarketcap</Text>
+          <Text>
+            Price provided by&nbsp;
+            <Text
+              style={styles.linkStyle}
+              onPress={() => Linking.openURL("https://coinmarketcap.com/")}
+            >
+              CoinMarketCap
+            </Text>
+          </Text>
         </View>
       </View>
     );
@@ -55,6 +64,10 @@ const styles = StyleSheet.create({
   buttonText: {
     padding: 20,
     color: "white"
+  },
+  linkStyle: {
+    color: "blue",
+    textDecorationLine: "underline"
   },
   bottom: {
     flex: 1,
