@@ -65,6 +65,7 @@ const styles = StyleSheet.create({
     padding: 20,
     color: "white"
   },
+
   linkStyle: {
     color: "blue",
     textDecorationLine: "underline"
