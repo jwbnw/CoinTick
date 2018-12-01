@@ -21,9 +21,15 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <BtcTicker />
-        <LtcTicker />
-        <EthTicker />
+        <View style={styles.topSpace} />
+        <View style={styles.tokenContainer}>
+          <BtcTicker />
+          <LtcTicker />
+          <EthTicker />
+        </View>
+        <View style={styles.bottom}>
+          <Text>price providied by coinbasemarketcap</Text>
+        </View>
       </View>
     );
   }
@@ -32,12 +38,27 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    backgroundColor: "white",
+    alignItems: "center",
+    justifyContent: "space-between",
+    backgroundColor: "white"
+  },
+  tokenContainer: {
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  topSpace: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "flex-start"
   },
 
   buttonText: {
     padding: 20,
     color: "white"
+  },
+  bottom: {
+    flex: 1,
+    justifyContent: "flex-end",
+    marginBottom: 36
   }
 });
