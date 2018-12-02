@@ -12,6 +12,7 @@
   "dependencies": {
     "eslint": "^5.9.0",
     "expo": "^31.0.2",
+    "metro-react-native-babel-preset": "^0.50.0",
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz"
   },
