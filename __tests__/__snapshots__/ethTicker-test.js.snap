@@ -20,11 +20,6 @@ exports[`Renders Correctly 1`] = `
 >
   <Image
     source={Object {}}
-    style={
-      Object {
-        "alignSelf": "center",
-      }
-    }
   />
 </View>
 `;

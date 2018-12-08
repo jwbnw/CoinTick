@@ -1,9 +1,9 @@
 import React from "react";
-import BtcTicker from "./../components/btcTicker";
+import LtcTicker from "./../components/ltcTicker";
 
 import renderer from "react-test-renderer";
 
 test("Renders Correctly", () => {
-  const tree = renderer.create(<BtcTicker />).toJSON();
+  const tree = renderer.create(<LtcTicker />).toJSON();
   expect(tree).toMatchSnapshot();
 });
