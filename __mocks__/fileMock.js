@@ -1,0 +1,1 @@
+jest.mock('./assets/btc.png', ()=>'btc.png');

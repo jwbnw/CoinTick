@@ -10,6 +10,7 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "babel-preset-react-native": "^4.0.1",
     "eslint": "^5.9.0",
     "expo": "^31.0.2",
     "metro-react-native-babel-preset": "^0.50.0",
@@ -19,5 +20,12 @@
   "devDependencies": {
     "babel-preset-expo": "^5.0.0",
     "jest": "^23.6.0"
+  },
+  "jest": {
+    "preset": "react-native",
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
+    }
   }
 }
