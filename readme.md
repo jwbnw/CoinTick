@@ -2,47 +2,59 @@
 
 CoinTick is a mobile application built using React-Native and Expo. CoinTick is designed to get the end user instant price updates on their favorite crypto-currency. We are currently deploying via Expo but will be moving to the Google Play store with our second release. CoinTick is a work in progress, check out the issues to to see what we're working on!
 
-## Getting Started
+## Installing
 
+```
 1) Download the Expo Mobile App for Andorid Or Iphone
+```
 
 2) Launch the Expo Mobile App
 
-2) Visit (project link)
+``
+3) Visit (project link)
 
-3) Scan the QR code there or below! (Will add once launched)
+```
 
+4) Scan the QR code there or below! (Will add qr code once launched)
+```
 
-### Installing
+### Building it yourself
 
-If you want to build the project locally and conribute this is how.
+If you want to build the project locally here is how.
 
 -- Assuming you already have Node.js installed (<a href="https://nodejs.org">if not click here to download and find documentation on how to do so</a>) --
 
 ```
-1) 
+1) Clone/Fork the Repo 
 ```
 
-2)
+2) Install expo cli: npm install -g expo-cli
 
 ```
-3)
+
+3) Download the Expo App for iphone or android via the play or apple store
+
+```
+4) Navigate to the root directory of CoinTick and run: npm start
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+5) This should open up a browser window with a QR code to scan for you to test your changes locally!
+```
+If you run into any build issues locally these links may be able to help you out!
+
+<a href="https://facebook.github.io/react-native/docs/getting-started"> React Native getting started</a>
+
+<a href="https://docs.expo.io/versions/latest/workflow/expo-cli"> Expo Cli getting started</a>
 
 ## Running the tests
 
-We use Jest(provide link) to run tests and provide code coverage. To run the test suite just run the "jest" command from within the project directory structure. Note: If you are making changes please do not forget to run and update the snapshot tests along with making sure your code additions are covered, these are mandatory for your PR to be accepted into the project. 
+We use [Jest](https://jestjs.io/) to run tests and provide code coverage. To run the test suite just run the "jest" command from within the project directory structure. 
 
 ## Built With
 
-* [React-Native]() 
-* [Expo]() 
-* [ROME]() 
-
-## Contributing
-
+* [React-Native](https://github.com/facebook/react-native) 
+* [Expo](https://github.com/expo/expo-cli) 
+* [Babel](https://github.com/babel/babel) 
 
 ## Versioning
 
@@ -50,7 +62,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details (need to add one of these before publishing)
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
 ## Acknowledgments
 
