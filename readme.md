@@ -7,16 +7,15 @@ CoinTick is a mobile application built using React-Native and Expo. CoinTick is 
 ```
 1) Download the Expo Mobile App for Andorid Or Iphone
 ```
-
-2) Launch the Expo Mobile App
-
 ```
-
+2) Launch the Expo Mobile App
+```
+```
 3) Visit (project link)
-
+```
 ```
 4) Scan the QR code there or below! (Will add qr code once launched)
-
+```
 
 ### Building it yourself
 
@@ -27,17 +26,12 @@ If you want to build the project locally here is how.
 ```
 1) Clone/Fork the Repo 
 ```
-
 2) Install expo cli: npm install -g expo-cli
-
 ```
-
 3) Download the Expo App for iphone or android via the play or apple store
-
 ```
 4) Navigate to the root directory of CoinTick and run: npm start
 ```
-
 5) This should open up a browser window with a QR code to scan for you to test your changes locally!
 ```
 If you run into any build issues locally these links may be able to help you out!
