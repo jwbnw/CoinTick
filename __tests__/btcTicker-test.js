@@ -4,12 +4,21 @@ import BtcTicker from "./../components/btcTicker";
 import renderer from "react-test-renderer";
 import { shallow } from "enzyme";
 
-test("BTC Ticker Renders Correctly", () => {
-  const tree = renderer.create(<BtcTicker />).toJSON();
-  expect(tree).toMatchSnapshot();
+describe("BTC Ticker Render Testing", () => {
+  it("BTC Ticker isLoading: True Renders Correctly", () => {
+    const tree = renderer.create(<BtcTicker />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  it("BTC Ticker isLoading: False Renders Correctly", () => {
+    const wrapper = shallow(<BtcTicker />);
+    const instance = wrapper.instance();
+    instance.state.isLoading = false;
+    const tree = renderer.create(wrapper).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
 
-describe("BtcTicker component", () => {
+describe("Btc Ticker Unit Testing", () => {
   it("Constructor should set isLoading to true", () => {
     const wrapper = shallow(<BtcTicker />);
     expect(wrapper.instance().state.isLoading).toBe(true);
@@ -37,5 +46,4 @@ describe("BtcTicker component", () => {
   });
   // last tests that would be nice would be mocking the api call to coinmarketcap and testing our
   // fetchData functionality.
-  // along with creating a snap for when isStateLoading is false (the other render conditional)
 });
