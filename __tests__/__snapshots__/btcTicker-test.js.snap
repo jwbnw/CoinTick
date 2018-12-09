@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Renders Correctly 1`] = `
+exports[`BTC Ticker Renders Correctly 1`] = `
 <View
   accessible={true}
   isTVSelectable={true}
