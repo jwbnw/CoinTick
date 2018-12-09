@@ -10,13 +10,13 @@ CoinTick is a mobile application built using React-Native and Expo. CoinTick is 
 
 2) Launch the Expo Mobile App
 
-``
+```
+
 3) Visit (project link)
 
 ```
-
 4) Scan the QR code there or below! (Will add qr code once launched)
-```
+
 
 ### Building it yourself
 
