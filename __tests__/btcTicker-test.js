@@ -35,6 +35,7 @@ describe("BtcTicker component", () => {
     instance._onPressBtn();
     expect(fetchDataMock).toBeCalled();
   });
-  // last test that would be nice would be mocking the api call to coinmarketcap and testing our
+  // last tests that would be nice would be mocking the api call to coinmarketcap and testing our
   // fetchData functionality.
+  // along with creating a snap for when isStateLoading is false (the other render conditional)
 });

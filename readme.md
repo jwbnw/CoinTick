@@ -33,7 +33,10 @@ If you want to build the project locally here is how.
 3) Download the Expo App for iphone or android via the play or apple store
 ```
 ```
-4) Navigate to the root directory of CoinTick and run: npm start
+4) Navigate to the root directory of CoinTick and run: npm install
+```
+```
+5) Navigate to the root directory of CoinTick and run: npm start
 ```
 ```
 5) This should open up a browser window with a QR code to scan for you to test your changes locally!
@@ -46,7 +49,7 @@ If you run into any build issues locally these links may be able to help you out
 
 ## Running the tests
 
-We use [Jest](https://jestjs.io/) to run tests and provide code coverage. To run the test suite just run the "jest" command from within the project directory structure. 
+We use [Jest](https://jestjs.io/) and [Enzyme](https://airbnb.io/enzyme/docs/guides/react-native.html) to run tests and provide code coverage. To run the test suite just run the "jest" command from within the project directory structure. 
 
 ## Built With
 
@@ -67,4 +70,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 * Jest
 * React Native
 * Expo
+* Enzyme
 
