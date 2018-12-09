@@ -26,11 +26,15 @@ If you want to build the project locally here is how.
 ```
 1) Clone/Fork the Repo 
 ```
+```
 2) Install expo cli: npm install -g expo-cli
+```
 ```
 3) Download the Expo App for iphone or android via the play or apple store
 ```
+```
 4) Navigate to the root directory of CoinTick and run: npm start
+```
 ```
 5) This should open up a browser window with a QR code to scan for you to test your changes locally!
 ```
