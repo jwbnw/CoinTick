@@ -4,9 +4,17 @@ import BtcTicker from "./../components/btcTicker";
 import renderer from "react-test-renderer";
 import { shallow } from "enzyme";
 
+
 describe("BTC Ticker Render Testing", () => {
   it("BTC Ticker isLoading: True Renders Correctly", () => {
     const tree = renderer.create(<BtcTicker />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  it("BTC Ticker isLoading: False Renders Correctly", () => {
+    jest.useFakeTimers(); // This mocks out setTimeout and other timer functions with mock functions.
+    
+    const wrapper = shallow(<BtcTicker />);
+    const tree = renderer.create(wrapper.setState({isLoading: false})).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });
