@@ -58,6 +58,14 @@ describe("Btc Ticker Unit Testing", () => {
     } catch (e) {}
   });
   it("fetchData should fail with an error", async () => {
-    throw("not implemented");
+    fetch.mockResponseOnce(JSON.stringify([{}]));
+
+    const wrapper = shallow(<BtcTicker />);
+    const instance = wrapper.instance();
+    try {
+      await instance.fetchData();
+    } catch (e) {
+      expect(e).toMatch("error");
+    }
   });
 });

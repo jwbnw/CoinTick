@@ -14,7 +14,7 @@ import FadeInView from "./fadeIn.js";
 export default class EthTicker extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { isLoading: true };
+    this.state = { isLoading: true, dataSource: "" };
 
     this._onPressBtn = this._onPressBtn.bind(this);
     this._onPressBtn1 = this._onPressBtn1.bind(this);
