@@ -4,17 +4,18 @@ import BtcTicker from "./../components/btcTicker";
 import renderer from "react-test-renderer";
 import { shallow } from "enzyme";
 
-
 describe("BTC Ticker Render Testing", () => {
   it("BTC Ticker isLoading: True Renders Correctly", () => {
     const tree = renderer.create(<BtcTicker />).toJSON();
     expect(tree).toMatchSnapshot();
   });
   it("BTC Ticker isLoading: False Renders Correctly", () => {
-    jest.useFakeTimers(); // This mocks out setTimeout and other timer functions with mock functions.
-    
+    jest.useFakeTimers(); // This mocks out setTimeout and other timer functions with mock functions, needed since we use Animated here.
+
     const wrapper = shallow(<BtcTicker />);
-    const tree = renderer.create(wrapper.setState({isLoading: false})).toJSON();
+    const tree = renderer
+      .create(wrapper.setState({ isLoading: false }))
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 });
@@ -45,7 +46,18 @@ describe("Btc Ticker Unit Testing", () => {
     instance._onPressBtn();
     expect(fetchDataMock).toBeCalled();
   });
-  // last tests that would be nice would be mocking the api call to coinmarketcap and testing our
-  // fetchData functionality.
-  // Test the other render conditional too 
+  it("fetchData should make call and set state", async () => {
+    fetch.mockResponseOnce(JSON.stringify([{ price_usd: "1" }]));
+
+    const wrapper = shallow(<BtcTicker />);
+    const instance = wrapper.instance();
+    try {
+      instance.fetchData();
+      expect(instance.state.dataSource).toEqual("1.0");
+      expect(instance.state.isLoading).toEqual(false);
+    } catch (e) {}
+  });
+  it("fetchData should fail with an error", async () => {
+    //test the things
+  });
 });

@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     height: 82, //match image size
     fontSize: 26,
     textAlign: "center",
-    paddingTop: 20,
+    paddingTop: 20
   },
   buttonText: {
     padding: 20,
