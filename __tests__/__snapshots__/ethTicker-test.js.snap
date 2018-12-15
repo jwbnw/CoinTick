@@ -63,3 +63,67 @@ exports[`BTC Ticker Render Testing BTC Ticker isLoading: True Renders Correctly 
   />
 </View>
 `;
+
+exports[`ETH Ticker Render Testing ETH Ticker isLoading: False Renders Correctly 1`] = `
+<View
+  style={
+    Object {
+      "opacity": 0,
+    }
+  }
+>
+  <View
+    accessible={true}
+    isTVSelectable={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignSelf": "center",
+        "opacity": 1,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "fontSize": 26,
+          "height": 100,
+          "paddingTop": 20,
+          "textAlign": "center",
+        }
+      }
+    >
+      $
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`ETH Ticker Render Testing ETH Ticker isLoading: True Renders Correctly 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignSelf": "center",
+      "opacity": 1,
+      "padding": 10,
+    }
+  }
+>
+  <Image
+    source={Object {}}
+  />
+</View>
+`;

@@ -4,12 +4,12 @@ import EthTicker from "./../components/ethTicker";
 import renderer from "react-test-renderer";
 import { shallow } from "enzyme";
 
-describe("BTC Ticker Render Testing", () => {
-  it("BTC Ticker isLoading: True Renders Correctly", () => {
+describe("ETH Ticker Render Testing", () => {
+  it("ETH Ticker isLoading: True Renders Correctly", () => {
     const tree = renderer.create(<EthTicker />).toJSON();
     expect(tree).toMatchSnapshot();
   });
-  it("BTC Ticker isLoading: False Renders Correctly", () => {
+  it("ETH Ticker isLoading: False Renders Correctly", () => {
     jest.useFakeTimers(); // This mocks out setTimeout and other timer functions with mock functions, needed since we use Animated here.
 
     const wrapper = shallow(<EthTicker />);
@@ -20,14 +20,10 @@ describe("BTC Ticker Render Testing", () => {
   });
 });
 
-describe("Btc Ticker Unit Testing", () => {
+describe("Eth Ticker Unit Testing", () => {
   it("Constructor should set isLoading to true", () => {
     const wrapper = shallow(<EthTicker />);
     expect(wrapper.instance().state.isLoading).toBe(true);
-  });
-  it("Constructor should set dataSource to an empty string", () => {
-    const wrapper = shallow(<EthTicker />);
-    expect(wrapper.instance().state.dataSource).toBe("");
   });
   it("_onPresBtn1 should set isLoading to true", () => {
     const wrapper = shallow(<EthTicker />);
