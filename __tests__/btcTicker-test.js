@@ -58,6 +58,6 @@ describe("Btc Ticker Unit Testing", () => {
     } catch (e) {}
   });
   it("fetchData should fail with an error", async () => {
-    //test the things
+    throw("not implemented");
   });
 });
