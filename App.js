@@ -19,10 +19,16 @@ export default class App extends Component {
     this.state = { isLoading: true };
   }
 
+  navigateSettings = () => {};
+
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.topSpace} />
+        <View style={styles.topSpace}>
+          <TouchableOpacity onPress={this.navigateSettings()}>
+            <Text style={{ textAlign: "right" }}>Settings</Text>
+          </TouchableOpacity>
+        </View>
         <View style={styles.tokenContainer}>
           <BtcTicker />
           <LtcTicker />
@@ -47,7 +53,7 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
+    // alignItems: "center",
     justifyContent: "space-between",
     backgroundColor: "white"
   },
@@ -57,10 +63,10 @@ const styles = StyleSheet.create({
   },
   topSpace: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "flex-start"
+    justifyContent: "flex-start",
+    marginRight: 36,
+    marginTop: 36
   },
-
   buttonText: {
     padding: 20,
     color: "white"
@@ -71,6 +77,7 @@ const styles = StyleSheet.create({
     textDecorationLine: "underline"
   },
   bottom: {
+    alignItems: "center",
     flex: 1,
     justifyContent: "flex-end",
     marginBottom: 36
