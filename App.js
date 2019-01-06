@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import {
-  Alert,
-  AppRegistry,
   StyleSheet,
   View,
   Linking,
@@ -9,11 +7,16 @@ import {
   Text
 } from "react-native";
 
+import { 
+  createStackNavigator, 
+  createAppContainer } 
+  from "react-navigation";
+
 import BtcTicker from "./components/btcTicker.js";
 import LtcTicker from "./components/ltcTicker.js";
 import EthTicker from "./components/ethTicker.js";
 
-export default class App extends Component {
+class HomeScreen extends Component {
   constructor(props) {
     super(props);
     this.state = { isLoading: true };
@@ -53,7 +56,6 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // alignItems: "center",
     justifyContent: "space-between",
     backgroundColor: "white"
   },
@@ -83,3 +85,10 @@ const styles = StyleSheet.create({
     marginBottom: 36
   }
 });
+
+const AppNavigator = createStackNavigator({
+  Home: HomeScreen
+  
+});
+
+export default createAppContainer(AppNavigator);
