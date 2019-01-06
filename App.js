@@ -7,14 +7,12 @@ import {
   Text
 } from "react-native";
 
-import { 
-  createStackNavigator, 
-  createAppContainer } 
-  from "react-navigation";
+import { createStackNavigator, createAppContainer } from "react-navigation";
 
 import BtcTicker from "./components/btcTicker.js";
 import LtcTicker from "./components/ltcTicker.js";
 import EthTicker from "./components/ethTicker.js";
+import SettingsScreen from "./screens/settings.js";
 
 class HomeScreen extends Component {
   constructor(props) {
@@ -22,13 +20,13 @@ class HomeScreen extends Component {
     this.state = { isLoading: true };
   }
 
-  navigateSettings = () => {};
-
   render() {
     return (
       <View style={styles.container}>
         <View style={styles.topSpace}>
-          <TouchableOpacity onPress={this.navigateSettings()}>
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate("Settings")}
+          >
             <Text style={{ textAlign: "right" }}>Settings</Text>
           </TouchableOpacity>
         </View>
@@ -86,9 +84,17 @@ const styles = StyleSheet.create({
   }
 });
 
-const AppNavigator = createStackNavigator({
-  Home: HomeScreen
-  
-});
+const AppNavigator = createStackNavigator(
+  {
+    Home: HomeScreen,
+    Settings: SettingsScreen
+  },
+  {
+    headerMode: "none"
+  },
+  {
+    initialRouteName: "Home"
+  }
+);
 
 export default createAppContainer(AppNavigator);
