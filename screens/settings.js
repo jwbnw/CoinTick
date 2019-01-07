@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import CoinSelector from "../components/coinSelector.js";
 
 export default class SettingsScreen extends React.Component {
   constructor(props) {
@@ -7,24 +8,34 @@ export default class SettingsScreen extends React.Component {
     this.state = {};
   }
 
+  //need to grab values from coin selector on save
+
   render() {
     return (
       <View style={styles.container}>
         <View style={{ height: 50, backgroundColor: "powderblue" }} />
         <View style={styles.midView}>
-          <Text>Settings Page</Text>
+          <Text style={styles.coinSelectorHeaderText}>
+            Choose Your Coins to Display
+          </Text>
+          <CoinSelector />
         </View>
-        <View style={{ height: 50, backgroundColor: "steelblue" }} />
+        <View style={styles.botView}>
+          <TouchableOpacity>
+            <Text>Save Changes</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  textt: {
-    marginTop: 36
+  coinSelectorHeaderText: {
+    marginBottom: 10,
+    textDecorationLine: "underline",
+    fontSize: 16
   },
-
   container: {
     flex: 1,
     flexDirection: "column",
@@ -34,5 +45,10 @@ const styles = StyleSheet.create({
   midView: {
     alignItems: "center",
     justifyContent: "center"
+  },
+  botView: {
+    alignItems: "center",
+    justifyContent: "center",
+    marginBottom: 36
   }
 });
