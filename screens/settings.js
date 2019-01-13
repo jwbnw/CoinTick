@@ -6,13 +6,21 @@ export default class SettingsScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
+    this.coinA = "bitcoin";
+    this.coinB = "litecoin";
+    this.coinC = "ethereum";
   }
 
-  saveChanges = coinsToDisplay => {
-    console.log(coinsToDisplay);
+  storeChanges = coinsToDisplay => {
+    this.coinA = coinsToDisplay[0];
+    this.coinB = coinsToDisplay[1];
+    this.coinC = coinsToDisplay[2];
   };
 
-  //need to grab values from coin selector on save
+  //Need to build navigation back to App.js with props included
+  saveChangesAndExit = () => {
+    console.log(this.coinA, this.coinB, this.coinC);
+  };
 
   render() {
     return (
@@ -24,11 +32,11 @@ export default class SettingsScreen extends React.Component {
           </Text>
           <CoinSelector
             onRef={ref => (this.parentSaveReference = ref)}
-            parentSaveReference={this.saveChanges.bind(this)}
+            parentSaveReference={this.storeChanges.bind(this)}
           />
         </View>
         <View style={styles.botView}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={this.saveChangesAndExit}>
             <Text>Save Changes</Text>
           </TouchableOpacity>
         </View>
