@@ -11,6 +11,11 @@ export default class CoinSelector extends React.Component {
     };
   }
 
+  handleSaveData = () => {
+    var coins = [this.state.coin1, this.state.coin2, this.state.coin3];
+    this.props.parentSaveReference(coins);
+  };
+
   updateChoice1 = choice => {
     this.setState({ coin1: choice });
   };
@@ -31,6 +36,7 @@ export default class CoinSelector extends React.Component {
 
 */
   render() {
+    this.handleSaveData();
     return (
       <View>
         <Picker

@@ -8,6 +8,10 @@ export default class SettingsScreen extends React.Component {
     this.state = {};
   }
 
+  saveChanges = coinsToDisplay => {
+    console.log(coinsToDisplay);
+  };
+
   //need to grab values from coin selector on save
 
   render() {
@@ -18,7 +22,10 @@ export default class SettingsScreen extends React.Component {
           <Text style={styles.coinSelectorHeaderText}>
             Choose Your Coins to Display
           </Text>
-          <CoinSelector />
+          <CoinSelector
+            onRef={ref => (this.parentSaveReference = ref)}
+            parentSaveReference={this.saveChanges.bind(this)}
+          />
         </View>
         <View style={styles.botView}>
           <TouchableOpacity>
